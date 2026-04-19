@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    //Necessari per a la serialització
+    id ("kotlinx-serialization")
 }
 
 android {
