@@ -13,3 +13,10 @@ data class ApiAlbum(
     @SerializedName("strAlbumThumb") val portada: String?,
     @SerializedName("intYearReleased") val anyo: String?
 )
+
+fun ApiAlbum.toAlbum() = Album(
+    id = id,
+    titulo = titulo,
+    anyo = anyo ?: "",
+    portada = portada ?: ""
+)

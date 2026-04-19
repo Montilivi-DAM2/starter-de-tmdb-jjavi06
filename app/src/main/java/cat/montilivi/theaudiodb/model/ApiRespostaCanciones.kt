@@ -13,3 +13,10 @@ data class ApiCancion(
     @SerializedName("intDuration") val duracionMs: String?,
     @SerializedName("strGenre") val genero: String?
 )
+
+fun ApiCancion.toCancion() = Cancion(
+    id = id,
+    nombre = nombre,
+    numero = numero,
+    duracion = duracionMs ?: "0"
+)

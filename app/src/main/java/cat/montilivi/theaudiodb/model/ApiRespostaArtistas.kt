@@ -13,3 +13,11 @@ data class ApiArtista(
     @SerializedName("strBiographyES") val biografia: String?,
     @SerializedName("strArtistThumb") val foto: String?
 )
+
+fun ApiArtista.toArtista(): Artista = Artista(
+    id = id,
+    nombre = nombre,
+    genero = genero ?: "Unknown",
+    biografia = biografia ?: "No biography available",
+    foto = foto ?: ""
+)
